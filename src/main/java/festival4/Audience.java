@@ -6,8 +6,22 @@ public class Audience {
     private int money = 100000;
     private Discount discount;
 
-    public Invitation getInvitation() {
-        return invitation;
+    private int day = 1;
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
     }
 
     public Discount getDiscount() {
@@ -41,9 +55,10 @@ public class Audience {
 
     public int buy(Ticket ticket, int day) {
         this.ticket = ticket;
-        int discount = this.discount.discount(ticket.getFee() * day);
-        money -= discount;
-        return discount;
+        int discountMoney = discount.discount(ticket.getFee() * day);
+        money -= discountMoney;
+        discount = null;
+        return discountMoney;
     }
 
     @Override

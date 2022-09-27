@@ -11,9 +11,9 @@ public class TicketBooth {
             ticket.setDay(day);
             audience.change(ticket);
         } else {
-            int day = 2;
-            int buyMoney = audience.buy(ticket, day);
-            amount =+ buyMoney;
+            ticket.setDay(audience.getDay());
+            int buyMoney = audience.buy(ticket);
+            amount += buyMoney;
         }
     }
 

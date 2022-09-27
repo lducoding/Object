@@ -17,10 +17,12 @@ public class Festival {
 
     public static void main(String[] args) {
         Audience audience1 = new Audience();
-        Invitation invitation = new Invitation();
-        audience1.setInvitation(invitation);
+//        Invitation invitation = new Invitation();
+//        audience1.setInvitation(invitation);
         System.out.println(audience1);
+        System.out.println(ticketBooth);
         ticketing(audience1);
         System.out.println(audience1);
+        System.out.println(ticketBooth);
     }
 }

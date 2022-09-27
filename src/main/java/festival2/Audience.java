@@ -39,6 +39,7 @@ public class Audience {
     }
 
     public int change(Ticket ticket) {
+        this.ticket = ticket;
         if(invitation != null) {
             invitation = null;
             return 0;

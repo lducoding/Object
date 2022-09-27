@@ -10,17 +10,19 @@ public class Festival {
 
     public static void main(String[] args) {
         Audience audience1 = new Audience();
+        audience1.setDay(1);
 
-//        ArtistInvitation volunteerInvitation = new ArtistInvitation();
-//        audience1.setInvitation(volunteerInvitation);
+//        CorpInvitation invitation = new CorpInvitation();
+//        audience1.setInvitation(invitation);
 
-        VolunteerDiscount volunteerDiscount = new VolunteerDiscount();
-        audience1.setDiscount(volunteerDiscount);
+        NoDiscount discount = new NoDiscount();
+        audience1.setDiscount(discount);
 
         System.out.println(audience1);
         System.out.println(ticketBooth);
         ticketing(audience1);
         System.out.println(audience1);
         System.out.println(ticketBooth);
+        System.out.println(audience1.getTicket().getDay());
     }
 }

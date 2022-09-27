@@ -6,6 +6,24 @@ public class Audience {
     private int money = 100000;
     private VolunteerDiscount volunteerDiscount;
 
+    private int day = 1;
+
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
 
     public void setVolunteerDiscount(VolunteerDiscount volunteerDiscount) {
         this.volunteerDiscount = volunteerDiscount;
@@ -32,11 +50,12 @@ public class Audience {
         return volunteerInvitation.day();
     }
 
-    public int buy(Ticket ticket, int day) {
+    public int buy(Ticket ticket) {
         this.ticket = ticket;
-        int discount = volunteerDiscount.discount(ticket.getFee() * day);
-        money -= discount;
-        return discount;
+        int discountMoney = volunteerDiscount.discount(ticket.getFee() * ticket.getDay());
+        money -= discountMoney;
+        volunteerDiscount = null;
+        return discountMoney;
     }
 
     @Override

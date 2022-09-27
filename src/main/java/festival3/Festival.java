@@ -14,13 +14,15 @@ public class Festival {
 //        VolunteerInvitation volunteerInvitation = new VolunteerInvitation();
 //        audience1.setVolunteerInvitation(volunteerInvitation);
 
-//        VolunteerDiscount volunteerDiscount = new VolunteerDiscount();
-//        audience1.setVolunteerDiscount(volunteerDiscount);
+        audience1.setDay(3);
+        VolunteerDiscount volunteerDiscount = new VolunteerDiscount();
+        audience1.setVolunteerDiscount(volunteerDiscount);
 
         System.out.println(audience1);
         System.out.println(ticketBooth);
         ticketing(audience1);
         System.out.println(audience1);
         System.out.println(ticketBooth);
+        System.out.println(audience1.getTicket().getDay());
     }
 }

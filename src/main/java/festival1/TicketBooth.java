@@ -19,4 +19,11 @@ public class TicketBooth {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return "TicketBooth{" +
+            "amount=" + amount +
+            '}';
+    }
 }

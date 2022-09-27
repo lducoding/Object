@@ -1,6 +1,7 @@
 package festival4;
 
-public class VolunteerInvitation implements Invitation{
+public class VolunteerInvitation implements Invitation {
+
 
     @Override
     public int day() {
