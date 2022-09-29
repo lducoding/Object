@@ -16,4 +16,4 @@
 
 ---- 협력에 따른 객체 정의 ----
 
-festival -> ticketBooth -> audience
+Festival -> TicketBooth -> Audience
