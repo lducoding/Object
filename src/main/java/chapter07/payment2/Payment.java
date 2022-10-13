@@ -30,7 +30,7 @@ public class Payment {
         describeResult(name, pay);
     }
 
-    private static void sumOfPayment(List<Integer> basePays, List<Boolean> partTimeFlag) {
+    public static void sumOfPayment(List<Integer> basePays, List<Boolean> partTimeFlag) {
         int sum = 0;
         for (int i = 0; i < partTimeFlag.size(); i++) {
             if(partTimeFlag.get(i)) {
@@ -42,20 +42,20 @@ public class Payment {
         System.out.println("급여의 총 합은: " + sum);
     }
 
-    private static String getName() {
+    public static String getName() {
         Scanner sc = new Scanner(System.in);
         System.out.println("이름을 입력하세요");
         return sc.next();
     }
 
-    private static double getTaxRate() {
+    public static double getTaxRate() {
         Scanner sc = new Scanner(System.in);
         System.out.println("세율을 입력하세요");
         double taxRate = sc.nextDouble();
         return taxRate;
     }
 
-    private static double calculatePayFor(String name, double taxRate) {
+    public static double calculatePayFor(String name, double taxRate) {
         int index = employees.indexOf(name);
 
         if(partTimeFlag.get(index)) {
@@ -67,7 +67,7 @@ public class Payment {
         }
     }
 
-    private static void describeResult(String name, double pay) {
+    public static void describeResult(String name, double pay) {
         System.out.println("이름: " + name + "급여: " + pay);
     }
 }

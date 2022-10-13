@@ -40,7 +40,7 @@ public class Payment {
         }
     }
 
-    private static void sumOfPayment(List<Employee> employees) {
+    public static void sumOfPayment(List<Employee> employees) {
         int sum = 0;
         for (Employee em : employees) {
             sum += em.monthlyBasePay();
