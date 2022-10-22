@@ -1,4 +1,4 @@
-package presentation.payment3;
+package chapter07.presentation.payment4;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class Payment {
 
     static List<Employee> employeeList = Arrays.asList(
-        new Employee("A", 400, false, 0),
-        new Employee("B", 300, false, 0),
-        new Employee("C", 250, false, 0),
-        new Employee("partA", 10, true, 3),
-        new Employee("partB", 5, true, 4)
+        new SalaryEmployee("A", 400),
+        new SalaryEmployee("B", 300),
+        new SalaryEmployee("C", 250),
+        new HourlyEmployee("partA", 10,3),
+        new HourlyEmployee("partB", 5,  4)
     );
 
 

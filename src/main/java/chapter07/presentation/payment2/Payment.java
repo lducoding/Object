@@ -1,4 +1,4 @@
-package presentation.payment4;
+package chapter07.presentation.payment2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,13 +6,10 @@ import java.util.Scanner;
 
 public class Payment {
 
-    static List<Employee> employeeList = Arrays.asList(
-        new SalaryEmployee("A", 400),
-        new SalaryEmployee("B", 300),
-        new SalaryEmployee("C", 250),
-        new HourlyEmployee("partA", 10,3),
-        new HourlyEmployee("partB", 5,  4)
-    );
+    static List<String> employees = Arrays.asList("A", "B", "C", "partA", "partB");
+    static List<Integer> basePays = Arrays.asList(400, 300, 250, 10, 5);
+    static List<Boolean> hourly = Arrays.asList(false, false, false, true, true);
+    static List<Integer> workTime = Arrays.asList(0, 0, 0, 3, 4);
 
 
     public static void main(String[] args) {
@@ -32,8 +29,12 @@ public class Payment {
     public static void sumOfPayment() {
         int sum = 0;
 
-        for (Employee em : employeeList) {
-            sum += em.monthlyPayment();
+        for (int i = 0; i < hourly.size(); i++) {
+            if(hourly.get(i)) {
+                sum += basePays.get(i) * workTime.get(i);
+            } else {
+                sum += basePays.get(i);
+            }
         }
 
         System.out.println("전체 직원의 총 급여는: " + sum);
@@ -41,14 +42,9 @@ public class Payment {
 
     public static void calculatePayment() {
         String name = getName();
-        for (Employee em : employeeList) {
-            if (em.getName().equals(name)) {
-                double taxRate = getTaxRate();
-                double pay = em.calculatePayment(taxRate);
-                describeResult(name, pay);
-                break;
-            }
-        }
+        double taxRate = getTaxRate();
+        double pay = calculatePayFor(name, taxRate);
+        describeResult(name, pay);
     }
 
     public static String getName() {
@@ -62,6 +58,17 @@ public class Payment {
         System.out.println("세율을 입력하세요");
         double taxRate = sc.nextDouble();
         return taxRate;
+    }
+
+    public static double calculatePayFor(String name, double taxRate) {
+        int index = employees.indexOf(name);
+        if (hourly.get(index)) {
+            Integer basePay = basePays.get(index) * workTime.get(index);
+            return basePay - (basePay * taxRate);
+        } else {
+            Integer basePay = basePays.get(index);
+            return basePay - (basePay * taxRate);
+        }
     }
 
     public static void describeResult(String name, double pay) {

@@ -1,4 +1,4 @@
-package presentation.payment1;
+package chapter07.presentation.payment1;
 
 import java.util.Arrays;
 import java.util.List;
