@@ -14,4 +14,6 @@ public class Test {
   // 5번 커밋
 
   // 6번 커밋
+
+  // 왜 remote 삭제 안됨?
 }
