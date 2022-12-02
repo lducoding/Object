@@ -6,14 +6,15 @@ class Bird {
     };
 }
 
-class Penguin extends Bird{
-    public Penguin() {
+class Penguin2 extends Bird{
+    public Penguin2() {
         System.out.println("펭귄 ");
     }
 }
+
 public class Start {
     public static void main(String[] args) {
-        Penguin penguin = new Penguin();
+        Bird penguin = new Penguin2();
         penguin.fly();
     }
 }
