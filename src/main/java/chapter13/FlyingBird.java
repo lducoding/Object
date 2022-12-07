@@ -1,7 +1,7 @@
 package chapter13;
 
-public class Birdd {
-  public void egg() {
+public class FlyingBird extends Bird {
+  public void fly() {
     System.out.println("하늘을 날다.");
   }
 }

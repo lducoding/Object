@@ -1,14 +1,5 @@
 package chapter13;
 
-public class Penguin implements UnFlying, Egg {
+public class Penguin extends UnFlyingBird {
 
-  @Override
-  public void unFlying() {
-
-  }
-
-  @Override
-  public void egg() {
-
-  }
 }
